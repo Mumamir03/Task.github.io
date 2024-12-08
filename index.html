@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskMaster</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>TaskMaster</h1>
+    
+    <!-- User Authentication -->
+    <div id="auth">
+      <input type="text" id="username" placeholder="Username">
+      <input type="password" id="password" placeholder="Password">
+      <button onclick="register()">Register</button>
+      <button onclick="login()">Login</button>
+    </div>
+    
+    <!-- Task Input Form -->
+    <div id="taskForm">
+      <input type="text" id="taskTitle" placeholder="Task Title">
+      <input type="text" id="taskDescription" placeholder="Task Description">
+      <input type="date" id="taskDeadline">
+      <select id="taskPriority">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+      <button onclick="createTask()">Add Task</button>
+    </div>
+    
+    <!-- Task Filter and Search -->
+    <div id="taskControls">
+      <select id="filterPriority" onchange="filterTasks()">
+        <option value="">All Priorities</option>
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+      <input type="text" id="searchBar" placeholder="Search tasks..." onkeyup="searchTasks()">
+    </div>
+
+    <!-- Task List -->
+    <div id="taskList"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+        </html>
+        
